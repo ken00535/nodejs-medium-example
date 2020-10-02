@@ -1,0 +1,17 @@
+{
+  "name": "reveal",
+  "version": "1.0.0",
+  "description": "reveal test",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "colors": "^1.4.0",
+    "gulp": "^4.0.2",
+    "node-qunit-puppeteer": "^2.0.3",
+    "rollup": "^2.28.2"
+  }
+}
