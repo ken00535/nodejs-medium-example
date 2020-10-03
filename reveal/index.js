@@ -4,13 +4,14 @@ const path = require("path");
 const fs = require("fs");
 
 // setting user-defined type
-const mineTypes = {
+const mimeTypes = {
   html: "text/html",
   jpeg: "image/jpeg",
   jpg: "image/jpg",
   png: "image/png",
   js: "text/javascript",
   css: "text/css",
+  mp4: "video/mp4",
   woff: "text/woff",
 };
 
@@ -33,7 +34,7 @@ var server = http.createServer(function (req, res) {
 
   //get the file type to check is html type
   if (stats.isFile()) {
-    var mineType = mineTypes[path.extname(fileName).split(".").reverse()[0]];
+    var mineType = mimeTypes[path.extname(fileName).split(".").reverse()[0]];
     res.writeHead(200, { "Content-type": mineType });
     var fileStream = fs.createReadStream(fileName);
     fileStream.pipe(res);
