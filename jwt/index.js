@@ -6,11 +6,10 @@ const jwt = require('jsonwebtoken')
 const SECRET = 'secret'
 
 app.use(express.static(__dirname + '/public'));
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json({ extended: false }));
 app.post('/login', function (req, res) {
-    if (req.body.name === "ken") {
-        const token = jwt.sign({ user: req.body.name }, SECRET, { expiresIn: '1 day' })
-        res.redirect('../login')
+    if (req.body.user === "ken") {
+        const token = jwt.sign({ user: req.body.user }, SECRET, { expiresIn: '1 day' })
         res.status(201).send({ token })
     } else {
         res.status(200).send("Fail");
