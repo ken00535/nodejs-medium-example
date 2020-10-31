@@ -24,7 +24,7 @@ app.get('/content', function (req, res) {
     token = auth.replace('Bearer ', '')
     try {
         const decoded = jwt.verify(token, SECRET)
-        if (decoded.user == "ken") {
+        if (decoded.user == "user") {
             res.status(200).send({ location: '/content.html' })
         }
     } catch {
