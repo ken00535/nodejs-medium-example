@@ -12,7 +12,7 @@ app.post('/login', function (req, res) {
         const token = jwt.sign({ user: req.body.user }, SECRET, { expiresIn: '1 day' })
         res.status(201).send({ token })
     } else {
-        res.status(200).send("Fail");
+        res.status(401).send("Fail");
     }
 })
 app.get('/content', function (req, res) {

@@ -1,11 +1,12 @@
 
 async function login(user, password) {
     try {
-        let res = await axios.post('http://192.168.99.92:8080/login', {
+        // modify address to your hostname
+        let res = await axios.post('http://192.168.99.83:8080/login', {
             user: user,
             password: password,
         })
-        res = await axios.get('http://192.168.99.92:8080/content', {
+        res = await axios.get('http://192.168.99.83:8080/content', {
             headers: {
                 'Authorization': `Bearer ${res.data.token}`
             },
