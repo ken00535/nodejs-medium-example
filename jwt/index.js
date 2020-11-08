@@ -44,7 +44,6 @@ app.get('/content', function (req, res) {
     const auth = req.header('Authorization')
     if (typeof auth === "undefined") {
         res.status(401).send({ error: 'Please authenticate.' })
-        console.log(48)
         return
     }
     token = auth.replace('Bearer ', '')
